@@ -3,7 +3,7 @@
 This function leverages Resource Principals for secure authorization, allowing the function to utilize the [OCI Python SDK](https://docs.oracle.com/en-us/iaas/tools/python/2.105.0/) for making API calls to OCI services. It retrieves the content of an uploaded object from an Object Storage bucket and reads the data and updates the NoSQL table. Please note that additional processing logic can be added as needed to process the data and update the target table.
 
 The function calls the following OCI Python SDK classes:
-* [Resource Principals Signer](https://oracle-cloud-infrastructure-python-sdk.readthedocs.io/en/latest/api/signing.html#resource-principals-signer) to authenticate
+* [Resource Principals Signer](https://docs.oracle.com/en-us/iaas/tools/python/2.105.0/) to authenticate
 * [Object Storage Client](https://oracle-cloud-infrastructure-python-sdk.readthedocs.io/en/latest/api/object_storage/client/oci.object_storage.ObjectStorageClient.html) to interact with Object Storage
 * [OCI Nosql Client](https://docs.oracle.com/en-us/iaas/tools/python/2.104.3/api/nosql/client/oci.nosql.NosqlClient.html) to publish message to stream endpoint
 
