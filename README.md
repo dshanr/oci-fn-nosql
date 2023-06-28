@@ -1,6 +1,6 @@
 # OCI Function for updating NoSQL table upon Object Upload
 
-This function leverages Resource Principals for secure authorization, allowing the function to utilize the [OCI Python SDK](https://oracle-cloud-infrastructure-python-sdk.readthedocs.io/en/latest/index.html) for making API calls to OCI services. It retrieves the content of an uploaded object from an Object Storage bucket and proceeds to send the event and file data to a private stream endpoint.
+This function leverages Resource Principals for secure authorization, allowing the function to utilize the [OCI Python SDK](https://oracle-cloud-infrastructure-python-sdk.readthedocs.io/en/latest/index.html) for making API calls to OCI services. It retrieves the content of an uploaded object from an Object Storage bucket and reads the data and updates the NoSQL table. Please note that additional processing logic can be added as needed to process the data and update the target table.
 
 The function calls the following OCI Python SDK classes:
 * [Resource Principals Signer](https://oracle-cloud-infrastructure-python-sdk.readthedocs.io/en/latest/api/signing.html#resource-principals-signer) to authenticate
@@ -109,7 +109,7 @@ fn -v deploy --app myapp
 To test this function, please follow the provided steps below.
   - Please make sure to enable the Function Invocation and event Rule execution logs.
 
-  - Upload a file to the specified object storage bucket that is configured in the event rule. 
+  - Upload **person.json** to the object storage bucket that is configured in the event rule. 
     This action will trigger the event rule and initiate the execution of the associated function. 
     Please be aware that there may be a delay before the function execution logs become available for viewing.
   

@@ -55,8 +55,7 @@ def handler(ctx, data: io.BytesIO = None):
         "gender": person_data["gender"]
     }
 
-    # Send the request to service, some parameters are not required, see API
-    # doc for more info
+    # Update the target nosql table with the data read from the file
     update_row_response = nosql_client.update_row(
         table_name_or_id="person",
         update_row_details=oci.nosql.models.UpdateRowDetails(
